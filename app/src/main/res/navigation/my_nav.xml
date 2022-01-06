@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <dialog
+        android:id="@+id/bottomSheetDialog"
+        android:name="com.subranil.dezerv.fragment.BottomSheetDialog"
+        android:label="fragment_bottom_sheet_dialog"
+        tools:layout="@layout/fragment_bottom_sheet_dialog" >
+        <action
+            android:id="@+id/action_bottomSheetDialog_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="allocationData"
+            app:argType="com.subranil.dezerv.model.Allocation[]" />
+    </dialog>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.subranil.dezerv.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bottomSheetDialog"
+            app:destination="@id/bottomSheetDialog" />
+    </fragment>
+</navigation>
