@@ -34,8 +34,13 @@ class CountryAdapter(private var countryList: Array<Allocation>) :
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val countryList = countryList
         holder.countryData.text = countryList[position].name
-        holder.countryPercentage.text = "${countryList[position].percentage } %"
-        holder.color.setBackgroundResource(HomeFragment.colorMap.getOrDefault(position, R.color.design_default_color_primary))
+        holder.countryPercentage.text = "${countryList[position].percentage} %"
+        holder.color.setBackgroundResource(
+            HomeFragment.colorMap.getOrDefault(
+                position,
+                R.color.design_default_color_primary
+            )
+        )
     }
 
     override fun getItemCount(): Int {
