@@ -12,6 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.subranil.dezerv.R
 import com.subranil.dezerv.adapter.CountryAdapter
 import com.subranil.dezerv.databinding.FragmentBottomSheetDialogBinding
+import com.subranil.dezerv.model.Allocation
 
 class BottomSheetDialog : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentBottomSheetDialogBinding

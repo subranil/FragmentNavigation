@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.subranil.dezerv.R
 import com.subranil.dezerv.databinding.CountryDataBinding
+import com.subranil.dezerv.fragment.HomeFragment
 import com.subranil.dezerv.model.Allocation
-import com.subranil.dezerv.model.ModelData
 
 class CountryAdapter(private var countryList: Array<Allocation>) :
     RecyclerView.Adapter<CountryAdapter.CustomViewHolder>() {
@@ -16,6 +17,7 @@ class CountryAdapter(private var countryList: Array<Allocation>) :
 
         var countryData: TextView = dataBinding.countryName
         var countryPercentage: TextView = dataBinding.countryPercentage
+        var color = dataBinding.countryColor
 
     }
 
@@ -33,6 +35,7 @@ class CountryAdapter(private var countryList: Array<Allocation>) :
         val countryList = countryList
         holder.countryData.text = countryList[position].name
         holder.countryPercentage.text = "${countryList[position].percentage } %"
+        holder.color.setBackgroundResource(HomeFragment.colorMap.getOrDefault(position, R.color.design_default_color_primary))
     }
 
     override fun getItemCount(): Int {
